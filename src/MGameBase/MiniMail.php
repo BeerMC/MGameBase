@@ -3,7 +3,6 @@ namespace MGameBase;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
-use pocketmine\Player;
 
 use MGameBase\MGameBase;
 
@@ -16,11 +15,11 @@ class MiniMail{
 	public $readed;
 	
 	public function __construct($give,$come,$message){
-		if($give instanceof Player){
+		if($give instanceof \pocketmine\Player){
 			$mp = MGameBase::getInstance()->getMP($give);
 			$give = $mp->getAccount();
 		}
-		if($come instanceof Player){
+		if($come instanceof \pocketmine\Player){
 			$mp = MGameBase::getInstance()->getMP($come);
 			$come = $mp->getAccount();
 		}
@@ -55,7 +54,7 @@ class MiniMail{
 	}
 	
     public static function restoreall($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
@@ -75,7 +74,7 @@ class MiniMail{
 	}
 	
     public static function readall($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
@@ -91,7 +90,7 @@ class MiniMail{
 	}
 
     public static function delall($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
@@ -109,7 +108,7 @@ class MiniMail{
 	}	
 	
     public static function listdata($player,$par){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;

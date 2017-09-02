@@ -1,6 +1,6 @@
 ﻿name: MGameBase
 main: MGameBase\MGameBase
-version: 52
+version: 53
 api:
  - 1.0.0
  - 2.0.0

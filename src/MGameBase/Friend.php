@@ -3,7 +3,6 @@ namespace MGameBase;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
-use pocketmine\Player;
 
 use MGameBase\Friend;
 
@@ -62,7 +61,7 @@ class Friend{
 	}
 	
     public static function acceptall($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
@@ -97,7 +96,7 @@ class Friend{
 	}
 	
     public static function refuseall($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
@@ -115,7 +114,7 @@ class Friend{
 	}
 	
     public static function listrequests($player){
-		if($player instanceof Player){
+		if($player instanceof \pocketmine\Player){
 		$account = MGameBase::getInstance()->getMP($player)->getAccount();
 		}else{
 		$account = $player;
